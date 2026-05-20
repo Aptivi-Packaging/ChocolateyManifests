@@ -11,4 +11,8 @@ Write-Output "<*> URL: $url"
 Write-Output "<*> Expected SHA256 Sum: $shacheck"
 Write-Output "<+> Configuration will be automatically generated on startup."
 
+# WARNING!
+Write-Output "<!> WARNING: Nitrocid Lite will no longer be shipped starting September 2026, but can still be built from source."
+# WARNING!
+
 Install-ChocolateyZipPackage $pkgName $url $toolsDir -ChecksumType "sha256" -Checksum $shacheck

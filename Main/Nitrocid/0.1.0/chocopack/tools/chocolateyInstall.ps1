@@ -1,14 +1,45 @@
 $ErrorActionPreference = 'Stop';
+Write-Output "<*>: for assumptions, <+> for progress, <-> for error"
+
+# Prepare the basic variables
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $pkgName    = "KS"
-$url        = "https://github.com/Aptivi/Nitrocid/releases/download/v0.1.0.76/0.1.0.76-bin.zip"
-$shacheck   = "0FF71C0D054DCE585EEC1274FC9198FC5EB1D4131F9D79FE2D2B779FD033A019"
-
-Write-Output "<*>: for assumptions, <+> for progress, <-> for error"
+$version    = "v0.1.0.76"
 Write-Output "<*> Installation directory: $toolsDir"
-Write-Output "<*> Package Name: $pkgName"
+Write-Output "<*> Package Name: $pkgName ($version)"
+
+# Check the system architecture
+$architecture = [System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture
+$arch         = switch ($architecture) {
+    "X64"   { "x64" }
+    "Arm64" { "arm64" }
+    Default { "unknown" }
+}
+Write-Output "<*> Architecture: $arch [$architecture]"
+if ($arch -eq "unknown") {
+    Throw "<-> Nitrocid doesn't support $architecture"
+}
+
+# Determine the URL and the SHA256 sum
+$url        = "https://github.com/Aptivi/Nitrocid/releases/download/$version/nitrocid-win-$arch-installer.exe"
+$shacheck   = switch ($arch) {
+    "x64"   { "3B3C63D00F4A5D270BABA9BBFD749DE8DD6B764AAB49D3F0DDE60055CE95050B" }
+    "arm64" { "7AEF7CF32239B796F4DD480995B48EEAC2D84DBC1F71D43B521638145ECBEB2B" }
+}
 Write-Output "<*> URL: $url"
 Write-Output "<*> Expected SHA256 Sum: $shacheck"
-Write-Output "<+> Configuration will be automatically generated on startup."
 
-Install-ChocolateyZipPackage $pkgName $url $toolsDir -ChecksumType "sha256" -Checksum $shacheck
+$packageArgs = @{
+  packageName   = $packageName
+  fileType      = 'exe'
+  url           = $url
+  silentArgs    = "/quiet /norestart"
+  validExitCodes= @(0, 3010, 1641)
+  softwareName  = 'Nitrocid*'
+  checksum      = $shacheck
+  checksumType  = 'sha256'
+}
+
+Write-Output "<+> Starting installation..."
+Install-ChocolateyPackage @packageArgs
+Write-Output "<+> Installation complete!"
