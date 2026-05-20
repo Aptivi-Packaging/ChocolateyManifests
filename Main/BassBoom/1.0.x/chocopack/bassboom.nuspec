@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>bassboom</id>
-    <version>1.0.0</version>
+    <version>1.0.0-errata</version>
     <packageSourceUrl>https://github.com/Aptivi-Choco-Pack/Packaging/tree/main/Main/BassBoom/0.2.x/chocopack</packageSourceUrl>
     <projectSourceUrl>https://github.com/Aptivi/BassBoom</projectSourceUrl>
 
