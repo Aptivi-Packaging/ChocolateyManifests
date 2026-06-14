@@ -4,7 +4,7 @@ Write-Output "<*>: for assumptions, <+> for progress, <-> for error"
 # Prepare the basic variables
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $pkgName    = "KS"
-$version    = "v0.1.0.77"
+$version    = "v0.1.0.78"
 Write-Output "<*> Installation directory: $toolsDir"
 Write-Output "<*> Package Name: $pkgName ($version)"
 
@@ -23,8 +23,9 @@ if ($arch -eq "unknown") {
 # Determine the URL and the SHA256 sum
 $url        = "https://github.com/Aptivi/Nitrocid/releases/download/$version/nitrocid-win-$arch-installer.exe"
 $shacheck   = switch ($arch) {
-    "x64"   { "714CE358B33010DF70CDAB7A4ED27BA367FD4A00B2C40D80EE2CCC60821FB963" }
-    "arm64" { "9FB5235C6E9D40DEA9998374C9218ABBC67DD5E7FC64965A0FA8C576AEBAF790" }
+    "x64"   { "F9D8A2C6545A6C236FEC805336C3BFBC1DF950CAE3EF066A31BD8F30F2D5C23E" }
+    "arm64" { "0A3D035F9D5E248B68027531CFC5D4999B773A26388843F555A927A360C39A0F" }
+    Default { "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855" }
 }
 Write-Output "<*> URL: $url"
 Write-Output "<*> Expected SHA256 Sum: $shacheck"
