@@ -5,15 +5,15 @@
     <id>kslite</id>
     <version>0.1.0.78</version>
     <packageSourceUrl>https://github.com/Aptivi-Packaging/ChocolateyManifests/tree/main/Main/Nitrocid/0.1.0/chocopack-lite</packageSourceUrl>
-    <projectSourceUrl>http://github.com/Aptivi/Nitrocid</projectSourceUrl>
+    <projectSourceUrl>https://github.com/Aptivi/Nitrocid</projectSourceUrl>
 
     <title>Nitrocid KS - Lite</title>
     <authors>Aptivi</authors>
     <owners>EoflaOE</owners>
-    <projectUrl>http://github.com/Aptivi/Nitrocid</projectUrl>
+    <projectUrl>https://aptivi.github.io/NitrocidShowcase</projectUrl>
     <docsUrl>https://aptivi.gitbook.io/nitrocid-ks-manual/</docsUrl>
     <bugTrackerUrl>https://github.com/Aptivi/Nitrocid/issues</bugTrackerUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/Aptivi/Nitrocid@latest/public/Nitrocid/OfficialAppIcon-NitrocidKS.ico</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/Aptivi/Nitrocid@latest/public/Nitrocid/OfficialAppIcon-Nitrocid.ico</iconUrl>
     <copyright>Copyright © 2018-2026 Aptivi, All rights reserved.</copyright>
     <licenseUrl>https://github.com/Aptivi/Nitrocid/blob/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
