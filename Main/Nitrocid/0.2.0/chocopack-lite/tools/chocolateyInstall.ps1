@@ -31,7 +31,7 @@ Write-Output "<*> URL: $url"
 Write-Output "<*> Expected SHA256 Sum: $shacheck"
 
 $packageArgs = @{
-  packageName   = $packageName
+  packageName   = $pkgName
   fileType      = 'exe'
   url           = $url
   silentArgs    = "/quiet /norestart NitrocidLite=1"

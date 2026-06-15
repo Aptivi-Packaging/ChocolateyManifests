@@ -25,12 +25,13 @@ $url        = "https://github.com/Aptivi/BassBoom/releases/download/$version/bas
 $shacheck   = switch ($arch) {
     "x64"   { "4E6DB3C15BCE120137B48400DB79B3E0CD8B327290151F933C8497A771F2C959" }
     "arm64" { "265A26C574D8E6E9F748E949FB4975FCF9C2BBD8A34B90D5E86601ED5C36418B" }
+    Default { "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855" }
 }
 Write-Output "<*> URL: $url"
 Write-Output "<*> Expected SHA256 Sum: $shacheck"
 
 $packageArgs = @{
-  packageName   = $packageName
+  packageName   = $pkgName
   fileType      = 'exe'
   url           = $url
   silentArgs    = "/quiet /norestart"
