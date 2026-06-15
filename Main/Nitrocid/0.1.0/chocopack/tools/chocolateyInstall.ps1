@@ -30,17 +30,6 @@ $shacheck   = switch ($arch) {
 Write-Output "<*> URL: $url"
 Write-Output "<*> Expected SHA256 Sum: $shacheck"
 
-$packageArgs = @{
-  packageName   = $packageName
-  fileType      = 'exe'
-  url           = $url
-  silentArgs    = "/quiet /norestart"
-  validExitCodes= @(0, 3010, 1641)
-  softwareName  = 'Nitrocid*'
-  checksum      = $shacheck
-  checksumType  = 'sha256'
-}
-
 Write-Output "<+> Starting installation..."
-Install-ChocolateyPackage @packageArgs
+Install-ChocolateyPackage -PackageName $packageName -FileType 'exe' -Url $url -SilentArgs "/quiet /norestart NitrocidLite=1" -ValidExitCodes @(0, 3010, 1641) -SoftwareName 'Nitrocid*' -ChecksumType 'sha256' -Checksum $shacheck
 Write-Output "<+> Installation complete!"
