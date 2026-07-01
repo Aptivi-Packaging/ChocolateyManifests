@@ -10,36 +10,32 @@ Write-Output "<*> Package Name: $pkgName ($version)"
 
 # Check the system architecture
 $architecture = [System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture
-$arch         = switch ($architecture) {
-    "X64"   { "x64" }
-    "Arm64" { "arm64" }
-    Default { "unknown" }
-}
-Write-Output "<*> Architecture: $arch [$architecture]"
-if ($arch -eq "unknown") {
-    Throw "<-> BassBoom doesn't support $architecture"
-}
-
-# Determine the URL and the SHA256 sum
-$url        = "https://github.com/Aptivi/BassBoom/releases/download/$version/bassboom-win-$arch-installer.exe"
-$shacheck   = switch ($arch) {
-    "x64"   { "531B78C55C5335970C0B8474D70F3CA1812F437AE494D13323B7E434F6FA2B16" }
-    "arm64" { "071C753F34D42A9891B2B4573937F05073B191293641A16664A0CB63677E5FE4" }
-    Default { "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855" }
-}
-Write-Output "<*> URL: $url"
-Write-Output "<*> Expected SHA256 Sum: $shacheck"
+Write-Output "<*> Architecture: $architecture"
 
 $packageArgs = @{
   packageName   = $pkgName
   fileType      = 'exe'
-  url           = $url
+  url           = "https://github.com/Aptivi/BassBoom/releases/download/$version/bassboom-win-x64-installer.exe"
+  url64bit      = "https://github.com/Aptivi/BassBoom/releases/download/$version/bassboom-win-x64-installer.exe"
   silentArgs    = "/quiet /norestart"
   validExitCodes= @(0, 3010, 1641)
-  softwareName  = 'BassBoom*'
-  checksum      = $shacheck
+  softwareName  = 'Nitrocid*'
+  checksum      = "531B78C55C5335970C0B8474D70F3CA1812F437AE494D13323B7E434F6FA2B16"
   checksumType  = 'sha256'
+  checksum64    = "531B78C55C5335970C0B8474D70F3CA1812F437AE494D13323B7E434F6FA2B16"
+  checksumType64= 'sha256'
 }
+
+# Change URL if ARM64 is detected
+if ($architecture -eq "Arm64") {
+    $packageArgs.url        = "https://github.com/Aptivi/BassBoom/releases/download/$version/bassboom-win-arm64-installer.exe"
+    $packageArgs.url64bit   = "https://github.com/Aptivi/BassBoom/releases/download/$version/bassboom-win-arm64-installer.exe"
+    $packageArgs.checksum   = "071C753F34D42A9891B2B4573937F05073B191293641A16664A0CB63677E5FE4"
+    $packageArgs.checksum64 = "071C753F34D42A9891B2B4573937F05073B191293641A16664A0CB63677E5FE4"
+}
+
+Write-Output "<*> URL: $($packageArgs.url)"
+Write-Output "<*> Expected SHA256 Sum: $($packageArgs.checksum)"
 
 Write-Output "<+> Starting installation..."
 Install-ChocolateyPackage @packageArgs

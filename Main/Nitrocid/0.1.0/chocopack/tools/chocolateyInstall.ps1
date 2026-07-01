@@ -10,33 +10,32 @@ Write-Output "<*> Package Name: $pkgName ($version)"
 
 # Check the system architecture
 $architecture = [System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture
-$arch         = switch ($architecture) {
-    "X64"   { "x64" }
-    "Arm64" { "arm64" }
-    Default { "unknown" }
-}
-Write-Output "<*> Architecture: $arch [$architecture]"
-
-# Determine the URL and the SHA256 sum
-$url        = "https://github.com/Aptivi/Nitrocid/releases/download/$version/nitrocid-win-$arch-installer.exe"
-$shacheck   = switch ($arch) {
-    "x64"   { "B109E104A4E653347339E255EFAA88E2FDD2B66018F549FAA5BF77B992FE4EE8" }
-    "arm64" { "C61D7086336F896150B984A5F431B4A02DDBEFB975DDF2B8D21B4DB27B54AF73" }
-    Default { "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855" }
-}
-Write-Output "<*> URL: $url"
-Write-Output "<*> Expected SHA256 Sum: $shacheck"
+Write-Output "<*> Architecture: $architecture"
 
 $packageArgs = @{
   packageName   = $pkgName
   fileType      = 'exe'
-  url           = $url
+  url           = "https://github.com/Aptivi/Nitrocid/releases/download/$version/nitrocid-win-x64-installer.exe"
+  url64bit      = "https://github.com/Aptivi/Nitrocid/releases/download/$version/nitrocid-win-x64-installer.exe"
   silentArgs    = "/quiet /norestart"
   validExitCodes= @(0, 3010, 1641)
   softwareName  = 'Nitrocid*'
-  checksum      = $shacheck
+  checksum      = "5E931BBC25AF2BE59875CA887D8890233BB934856189C897E77557090808C906"
   checksumType  = 'sha256'
+  checksum64    = "5E931BBC25AF2BE59875CA887D8890233BB934856189C897E77557090808C906"
+  checksumType64= 'sha256'
 }
+
+# Change URL if ARM64 is detected
+if ($architecture -eq "Arm64") {
+    $packageArgs.url        = "https://github.com/Aptivi/Nitrocid/releases/download/$version/nitrocid-win-arm64-installer.exe"
+    $packageArgs.url64bit   = "https://github.com/Aptivi/Nitrocid/releases/download/$version/nitrocid-win-arm64-installer.exe"
+    $packageArgs.checksum   = "F2AE118B988EA39334E56EFEEDD3C4060453390813A78E79D21144B1EB7573AE"
+    $packageArgs.checksum64 = "F2AE118B988EA39334E56EFEEDD3C4060453390813A78E79D21144B1EB7573AE"
+}
+
+Write-Output "<*> URL: $($packageArgs.url)"
+Write-Output "<*> Expected SHA256 Sum: $($packageArgs.checksum)"
 
 Write-Output "<+> Starting installation..."
 Install-ChocolateyPackage @packageArgs
