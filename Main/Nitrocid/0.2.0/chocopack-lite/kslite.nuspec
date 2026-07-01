@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>kslite</id>
-    <version>0.2.0.12</version>
+    <version>0.2.0.13</version>
     <packageSourceUrl>https://github.com/Aptivi-Packaging/ChocolateyManifests/tree/main/Main/Nitrocid/0.2.0/chocopack-lite</packageSourceUrl>
     <projectSourceUrl>https://github.com/Aptivi/Nitrocid</projectSourceUrl>
 
