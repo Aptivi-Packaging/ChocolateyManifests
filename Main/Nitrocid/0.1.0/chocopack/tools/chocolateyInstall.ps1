@@ -20,9 +20,9 @@ $packageArgs = @{
   silentArgs    = "/quiet /norestart"
   validExitCodes= @(0, 3010, 1641)
   softwareName  = 'Nitrocid*'
-  checksum      = "5E931BBC25AF2BE59875CA887D8890233BB934856189C897E77557090808C906"
+  checksum      = "B109E104A4E653347339E255EFAA88E2FDD2B66018F549FAA5BF77B992FE4EE8"
   checksumType  = 'sha256'
-  checksum64    = "5E931BBC25AF2BE59875CA887D8890233BB934856189C897E77557090808C906"
+  checksum64    = "B109E104A4E653347339E255EFAA88E2FDD2B66018F549FAA5BF77B992FE4EE8"
   checksumType64= 'sha256'
 }
 
@@ -30,8 +30,8 @@ $packageArgs = @{
 if ($architecture -eq "Arm64") {
     $packageArgs.url        = "https://github.com/Aptivi/Nitrocid/releases/download/$version/nitrocid-win-arm64-installer.exe"
     $packageArgs.url64bit   = "https://github.com/Aptivi/Nitrocid/releases/download/$version/nitrocid-win-arm64-installer.exe"
-    $packageArgs.checksum   = "F2AE118B988EA39334E56EFEEDD3C4060453390813A78E79D21144B1EB7573AE"
-    $packageArgs.checksum64 = "F2AE118B988EA39334E56EFEEDD3C4060453390813A78E79D21144B1EB7573AE"
+    $packageArgs.checksum   = "C61D7086336F896150B984A5F431B4A02DDBEFB975DDF2B8D21B4DB27B54AF73"
+    $packageArgs.checksum64 = "C61D7086336F896150B984A5F431B4A02DDBEFB975DDF2B8D21B4DB27B54AF73"
 }
 
 Write-Output "<*> URL: $($packageArgs.url)"
