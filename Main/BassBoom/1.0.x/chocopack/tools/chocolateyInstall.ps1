@@ -4,7 +4,7 @@ Write-Output "<*>: for assumptions, <+> for progress, <-> for error"
 # Prepare the basic variables
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $pkgName    = "bassboom"
-$version    = "v1.0.3"
+$version    = "v1.0.3.1"
 Write-Output "<*> Installation directory: $toolsDir"
 Write-Output "<*> Package Name: $pkgName ($version)"
 
@@ -20,9 +20,9 @@ $packageArgs = @{
   silentArgs    = "/quiet /norestart"
   validExitCodes= @(0, 3010, 1641)
   softwareName  = 'Nitrocid*'
-  checksum      = "21F049D88C7C939C7D917E663FAA4AA1F8768634A110CF5D902B04BFD071C37D"
+  checksum      = "12491C1E25F0A6C2B2437ACBF020A3F737B19D480B2464537D3FC7E2E1BFB5A2"
   checksumType  = 'sha256'
-  checksum64    = "21F049D88C7C939C7D917E663FAA4AA1F8768634A110CF5D902B04BFD071C37D"
+  checksum64    = "12491C1E25F0A6C2B2437ACBF020A3F737B19D480B2464537D3FC7E2E1BFB5A2"
   checksumType64= 'sha256'
 }
 
@@ -30,8 +30,8 @@ $packageArgs = @{
 if ($architecture -eq "Arm64") {
     $packageArgs.url        = "https://github.com/Aptivi/BassBoom/releases/download/$version/bassboom-win-arm64-installer.exe"
     $packageArgs.url64bit   = "https://github.com/Aptivi/BassBoom/releases/download/$version/bassboom-win-arm64-installer.exe"
-    $packageArgs.checksum   = "664A8C1ABCC93229E5FD28D226DB904E7B8D7C1342211A03914C0F1ED0D07B19"
-    $packageArgs.checksum64 = "664A8C1ABCC93229E5FD28D226DB904E7B8D7C1342211A03914C0F1ED0D07B19"
+    $packageArgs.checksum   = "C0BB1E8F87DC63EADF5E3C27951A1A18EBD1518C3FEC23817DE79A60129C6286"
+    $packageArgs.checksum64 = "C0BB1E8F87DC63EADF5E3C27951A1A18EBD1518C3FEC23817DE79A60129C6286"
 }
 
 Write-Output "<*> URL: $($packageArgs.url)"
