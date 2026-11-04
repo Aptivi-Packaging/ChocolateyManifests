@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>mediaboom</id>
+    <version>1.0.0.0</version>
+    <packageSourceUrl>https://github.com/Aptivi-Choco-Pack/Packaging/tree/main/Main/MediaBoom/1.0.x/chocopack</packageSourceUrl>
+    <projectSourceUrl>https://github.com/Aptivi/MediaBoom</projectSourceUrl>
+
+    <title>MediaBoom</title>
+    <authors>Aptivi</authors>
+    <owners>EoflaOE</owners>
+    <projectUrl>https://aptivi.github.io/MediaBoomShowcase</projectUrl>
+    <docsUrl>https://aptivi.gitbook.io/mediaboom-manual</docsUrl>
+    <bugTrackerUrl>https://github.com/Aptivi/MediaBoom/issues</bugTrackerUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/Aptivi/MediaBoom@latest/MediaBoom/Assets/OfficialAppIcon-MediaBoom-512.png</iconUrl>
+    <copyright>Copyright © 2023-2026 Aptivi, All rights reserved.</copyright>
+    <licenseUrl>https://github.com/Aptivi/MediaBoom/blob/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <tags>csharp music player sound audio video</tags>
+    <summary>Cross-platform media player written in C#</summary>
+    <description>MediaBoom is a media player and library hybrid that allows you to play media files and online radio stations.</description>
+    <releaseNotes>https://aptivi.gitbook.io/mediaboom-manual/versions/version-release-notes/api-v2.0-series</releaseNotes>
+
+    <dependencies>
+      <dependency id="dotnet-10.0-runtime" version="10.0.1"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
