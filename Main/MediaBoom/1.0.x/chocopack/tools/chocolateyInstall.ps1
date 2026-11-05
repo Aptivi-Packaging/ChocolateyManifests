@@ -20,9 +20,9 @@ $packageArgs = @{
   silentArgs    = "/quiet /norestart"
   validExitCodes= @(0, 3010, 1641)
   softwareName  = 'Nitrocid*'
-  checksum      = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+  checksum      = "8C841B8B941F17BA61778CB8B8F2B9E092CD5B40EFF7B0D40D67A6C6FC0FC66D"
   checksumType  = 'sha256'
-  checksum64    = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+  checksum64    = "8C841B8B941F17BA61778CB8B8F2B9E092CD5B40EFF7B0D40D67A6C6FC0FC66D"
   checksumType64= 'sha256'
 }
 
@@ -30,8 +30,8 @@ $packageArgs = @{
 if ($architecture -eq "Arm64") {
     $packageArgs.url        = "https://github.com/Aptivi/MediaBoom/releases/download/$version/mediaboom-win-arm64-installer.exe"
     $packageArgs.url64bit   = "https://github.com/Aptivi/MediaBoom/releases/download/$version/mediaboom-win-arm64-installer.exe"
-    $packageArgs.checksum   = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-    $packageArgs.checksum64 = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    $packageArgs.checksum   = "FC386C1CFA5886D6AF2D346353D1897F46269A2F3E477C034ACE5299FAE3C51A"
+    $packageArgs.checksum64 = "FC386C1CFA5886D6AF2D346353D1897F46269A2F3E477C034ACE5299FAE3C51A"
 }
 
 Write-Output "<*> URL: $($packageArgs.url)"
