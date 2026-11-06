@@ -4,7 +4,7 @@ Write-Output "<*>: for assumptions, <+> for progress, <-> for error"
 # Prepare the basic variables
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $pkgName    = "mediaboom"
-$version    = "v1.0.0"
+$version    = "v1.0.0.1"
 Write-Output "<*> Installation directory: $toolsDir"
 Write-Output "<*> Package Name: $pkgName ($version)"
 
@@ -20,9 +20,9 @@ $packageArgs = @{
   silentArgs    = "/quiet /norestart"
   validExitCodes= @(0, 3010, 1641)
   softwareName  = 'Nitrocid*'
-  checksum      = "8C841B8B941F17BA61778CB8B8F2B9E092CD5B40EFF7B0D40D67A6C6FC0FC66D"
+  checksum      = "89D587842E30C1C1E14266952A8858C2A0979FF6D8DDDC2094B4C929ADF82A40"
   checksumType  = 'sha256'
-  checksum64    = "8C841B8B941F17BA61778CB8B8F2B9E092CD5B40EFF7B0D40D67A6C6FC0FC66D"
+  checksum64    = "89D587842E30C1C1E14266952A8858C2A0979FF6D8DDDC2094B4C929ADF82A40"
   checksumType64= 'sha256'
 }
 
@@ -30,8 +30,8 @@ $packageArgs = @{
 if ($architecture -eq "Arm64") {
     $packageArgs.url        = "https://github.com/Aptivi/MediaBoom/releases/download/$version/mediaboom-win-arm64-installer.exe"
     $packageArgs.url64bit   = "https://github.com/Aptivi/MediaBoom/releases/download/$version/mediaboom-win-arm64-installer.exe"
-    $packageArgs.checksum   = "FC386C1CFA5886D6AF2D346353D1897F46269A2F3E477C034ACE5299FAE3C51A"
-    $packageArgs.checksum64 = "FC386C1CFA5886D6AF2D346353D1897F46269A2F3E477C034ACE5299FAE3C51A"
+    $packageArgs.checksum   = "86C7B851C114FF971B23B33DD5F6CDFA43BB4CC927A6C50C99D3D13DC3C4312F"
+    $packageArgs.checksum64 = "86C7B851C114FF971B23B33DD5F6CDFA43BB4CC927A6C50C99D3D13DC3C4312F"
 }
 
 Write-Output "<*> URL: $($packageArgs.url)"
