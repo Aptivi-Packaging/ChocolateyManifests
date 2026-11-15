@@ -13,7 +13,7 @@
     <projectUrl>https://aptivi.github.io/MediaBoomShowcase</projectUrl>
     <docsUrl>https://aptivi.gitbook.io/mediaboom-manual</docsUrl>
     <bugTrackerUrl>https://github.com/Aptivi/MediaBoom/issues</bugTrackerUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/Aptivi/MediaBoom@latest/MediaBoom/Assets/OfficialAppIcon-MediaBoom-512.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/Aptivi/MediaBoom@latest/assets/OfficialAppIcon-MediaBoom-512.png</iconUrl>
     <copyright>Copyright © 2023-2026 Aptivi, All rights reserved.</copyright>
     <licenseUrl>https://github.com/Aptivi/MediaBoom/blob/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>

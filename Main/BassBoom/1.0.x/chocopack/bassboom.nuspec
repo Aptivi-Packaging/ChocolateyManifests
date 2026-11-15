@@ -13,7 +13,7 @@
     <projectUrl>https://aptivi.github.io/BassBoomShowcase</projectUrl>
     <docsUrl>https://aptivi.gitbook.io/bassboom-manual</docsUrl>
     <bugTrackerUrl>https://github.com/Aptivi/BassBoom/issues</bugTrackerUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/Aptivi/BassBoom@latest/BassBoom/Assets/OfficialAppIcon-BassBoom-512.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/Aptivi/BassBoom@latest/assets/OfficialAppIcon-BassBoom-512.png</iconUrl>
     <copyright>Copyright © 2023-2026 Aptivi, All rights reserved.</copyright>
     <licenseUrl>https://github.com/Aptivi/BassBoom/blob/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
