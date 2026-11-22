@@ -4,7 +4,7 @@ Write-Output "<*>: for assumptions, <+> for progress, <-> for error"
 # Prepare the basic variables
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $pkgName    = "KS"
-$version    = "v0.2.1.3"
+$version    = "v0.2.1.4"
 Write-Output "<*> Installation directory: $toolsDir"
 Write-Output "<*> Package Name: $pkgName ($version)"
 
@@ -20,9 +20,9 @@ $packageArgs = @{
   silentArgs    = "/quiet /norestart NitrocidLite=1"
   validExitCodes= @(0, 3010, 1641)
   softwareName  = 'Nitrocid*'
-  checksum      = "2297FBC79544917442A7EF560E78872D31CFC7DDF4FE0001E7B2170B64535D19"
+  checksum      = "985E822C43927AB2A0113C755D4F50E790D0AF50187FA80A1E3CCB25A9AA0EDA"
   checksumType  = 'sha256'
-  checksum64    = "2297FBC79544917442A7EF560E78872D31CFC7DDF4FE0001E7B2170B64535D19"
+  checksum64    = "985E822C43927AB2A0113C755D4F50E790D0AF50187FA80A1E3CCB25A9AA0EDA"
   checksumType64= 'sha256'
 }
 
@@ -30,8 +30,8 @@ $packageArgs = @{
 if ($architecture -eq "Arm64") {
     $packageArgs.url        = "https://github.com/Aptivi/Nitrocid/releases/download/$version/nitrocid-win-arm64-installer.exe"
     $packageArgs.url64bit   = "https://github.com/Aptivi/Nitrocid/releases/download/$version/nitrocid-win-arm64-installer.exe"
-    $packageArgs.checksum   = "DBE79C74FDC261C8D1A51C715EE25F1978AEEDDEED5AD624A65F807271F6304A"
-    $packageArgs.checksum64 = "DBE79C74FDC261C8D1A51C715EE25F1978AEEDDEED5AD624A65F807271F6304A"
+    $packageArgs.checksum   = "3BE72FFFF684FA973DD48417E9796DCDEFEAF0E7558404364569C1A1DF0F28ED"
+    $packageArgs.checksum64 = "3BE72FFFF684FA973DD48417E9796DCDEFEAF0E7558404364569C1A1DF0F28ED"
 }
 
 Write-Output "<*> URL: $($packageArgs.url)"
